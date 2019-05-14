@@ -5,7 +5,7 @@ This is the code submission accompanying the ICML paper.
 Please note this is the code gist, which we believe contains sufficient details for implementing the model described in the paper.
 Unfortunately, the training pipeline and dataset cannot be shared at this time due to licensing issues.
 
-file:animations/pose.gif
+[[file:animations/pose.gif]]
 
 * Abstract
 Spherical convolutional networks have been introduced recently as tools to learn powerful feature representations of 3D shapes. Spherical CNNs are equivariant to 3D rotations making them ideally suited to applications where 3D data may be observed in arbitrary orientations. In this paper we learn 2D image embeddings with a similar equivariant structure: embedding the image of a 3D object should commute with rotations of the object.  We introduce a cross-domain embedding from 2D images into a spherical CNN latent space. This embedding encodes images with 3D shape properties and is equivariant to 3D rotations of the observed object. The model is supervised only by target embeddings obtained from a spherical CNN pretrained for 3D shape classification.
@@ -26,10 +26,9 @@ Note that this depends on the [[https://www.cs.dartmouth.edu/~geelong/soft/][SOF
 Helpers to evaluate alignment quality over whole datasets given set of parameters.
 
 * Reference
-Cross-domain 3D Equivariant Image Embeddings ([[https://arxiv.org/pdf/1812.02716][pdf]]) \\
-Carlos Esteves, Avneesh Sud, Zhengyi Luo, Kostas Daniilidis, Ameesh Makadia. \\
+Cross-domain 3D Equivariant Image Embeddings ([[https://arxiv.org/pdf/1812.02716][pdf]])
+Carlos Esteves, Avneesh Sud, Zhengyi Luo, Kostas Daniilidis, Ameesh Makadia.
 International Conference on Machine Learning, ICML 2019.
-
 
 * Authors
 
