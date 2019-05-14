@@ -1,0 +1,40 @@
+#+TITLE: Cross-Domain 3D Equivariant Image Embeddings
+
+* Disclaimer
+This is the code submission accompanying the ICML paper.
+Please note this is the code gist, which we believe contains sufficient details for implementing the model described in the paper.
+Unfortunately, the training pipeline and dataset cannot be shared at this time due to licensing issues.
+
+file:animations/pose.gif
+
+* Abstract
+Spherical convolutional networks have been introduced recently as tools to learn powerful feature representations of 3D shapes. Spherical CNNs are equivariant to 3D rotations making them ideally suited to applications where 3D data may be observed in arbitrary orientations. In this paper we learn 2D image embeddings with a similar equivariant structure: embedding the image of a 3D object should commute with rotations of the object.  We introduce a cross-domain embedding from 2D images into a spherical CNN latent space. This embedding encodes images with 3D shape properties and is equivariant to 3D rotations of the observed object. The model is supervised only by target embeddings obtained from a spherical CNN pretrained for 3D shape classification.
+We show that learning a rich embedding for images with appropriate geometric structure is sufficient for tackling varied applications, such as relative pose estimation and novel view synthesis, without requiring additional task-specific supervision.
+
+* Code
+We briefly describe the main components.
+** =model.py=
+Contains the network architectures used in this work.
+They all consist of encoder-decoder with 1D bottlenecks and are trained either from image to spherical embeddings or from spherical embeddings to image (for synthesis).
+=sph_embedding_residual= is the main function and utilizes Tensorflow official resnet implementation with minor patches.
+Note that the training target comes from a pre-trained Spherical CNN loaded with =tensorflow_hub=.
+** =spherical_correlation.m=
+After training the embeddings, in order to find relative pose between two images at test time we first save their embeddings then evaluate the spherical correlation in MATLAB.
+This computes the correlation over all pairs of corresponding channels and take the argmax to obtain the rotation that aligns the inputs.
+Note that this depends on the [[https://www.cs.dartmouth.edu/~geelong/soft/][SOFT 1.0]] and [[https://www.cs.dartmouth.edu/~geelong/sphere/][S2kit10]] libraries.
+** =spherical_correlation_err.m=, =align.m=, =run_alignment_experiment.m=
+Helpers to evaluate alignment quality over whole datasets given set of parameters.
+
+* Reference
+Cross-domain 3D Equivariant Image Embeddings ([[https://arxiv.org/pdf/1812.02716][pdf]]) \\
+Carlos Esteves, Avneesh Sud, Zhengyi Luo, Kostas Daniilidis, Ameesh Makadia. \\
+International Conference on Machine Learning, ICML 2019.
+
+
+* Authors
+
+[[http://machc.github.io][Carlos Esteves]] [1], Avneesh Sud [2], Zhengyi Luo [1],  [[http://www.ameeshmakadia.com][Ameesh Makadia]] [2], [[http://www.cis.upenn.edu/~kostas/][Kostas Daniilidis]] [1]
+
+[1] [[http://grasp.upenn.edu][GRASP Laboratory]], [[http://www.upenn.edu][University of Pennsylvania]]
+[2] [[http://research.google.com][Google]]
+
