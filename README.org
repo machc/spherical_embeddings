@@ -26,9 +26,18 @@ Note that this depends on the [[https://www.cs.dartmouth.edu/~geelong/soft/][SOF
 Helpers to evaluate alignment quality over whole datasets given set of parameters.
 
 * Reference
-Cross-domain 3D Equivariant Image Embeddings ([[https://arxiv.org/pdf/1812.02716][pdf]])
-Carlos Esteves, Avneesh Sud, Zhengyi Luo, Kostas Daniilidis, Ameesh Makadia.
+Cross-domain 3D Equivariant Image Embeddings ([[https://arxiv.org/pdf/1812.02716][pdf]]) \\
+Carlos Esteves, Avneesh Sud, Zhengyi Luo, Kostas Daniilidis, Ameesh Makadia. \\
 International Conference on Machine Learning, ICML 2019.
+
+#+BEGIN_SRC bibtex
+@article{esteves2018cross,
+  title={Cross-Domain 3D Equivariant Image Embeddings},
+  author={Esteves, Carlos and Sud, Avneesh and Luo, Zhengyi and Daniilidis, Kostas and Makadia, Ameesh},
+  journal={arXiv preprint arXiv:1812.02716},
+  year={2018}
+}
+#+END_SRC
 
 * Authors
 
