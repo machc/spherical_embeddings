@@ -21,7 +21,7 @@ Note that the training target comes from a pre-trained Spherical CNN loaded with
 ** =spherical_correlation.m=
 After training the embeddings, in order to find relative pose between two images at test time we first save their embeddings then evaluate the spherical correlation in MATLAB.
 This computes the correlation over all pairs of corresponding channels and take the argmax to obtain the rotation that aligns the inputs.
-Note that this depends on the [[https://www.cs.dartmouth.edu/~geelong/soft/][SOFT 1.0]] and [[https://www.cs.dartmouth.edu/~geelong/sphere/][S2kit10]] libraries.
+Note that this depends on the [[https://web.archive.org/web/20070214112805/http://www.cs.dartmouth.edu/~geelong/soft/][SOFT 1.0]] and [[https://web.archive.org/web/20150926234341/http://www.cs.dartmouth.edu/~geelong/sphere/][S2kit10]] libraries.
 ** =spherical_correlation_err.m=, =align.m=, =run_alignment_experiment.m=
 Helpers to evaluate alignment quality over whole datasets given set of parameters.
 
